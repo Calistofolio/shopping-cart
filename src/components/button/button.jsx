@@ -1,8 +1,8 @@
+import "./button.css"
 function Button(props) {
-
   return (
     <div>
-      <button onClick={props.onclick}> Adicionar ao carrinho</button>
+      <button className={props.class} onClick={props.onclick}> {props.buttonTitle} </button>
     </div>
   )
 }

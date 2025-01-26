@@ -6,17 +6,21 @@ import './product.css'
 
 function Product() {
 
-  const { total, setTotal } = useContext(ProductContext)
+  const { total, setTotal, cartProducts, setCartProducts } = useContext(ProductContext)
 
   return (
-    <div>
-      {data.map((m) => 
-      <div >
-        <img className="prod" src={m.image}/>
-        <h4>{m.title}</h4>
-        <p>R$ {m.value}</p>
-        <Button onclick = {() => setTotal(total + m.value)}/>
-      </div>)}
+    <div className="productContainer">
+      <li className="productTemplate">
+        {data.map((m) => 
+          <ul className="productCard">
+            <img className="prodImage" src={m.image}/>
+            <h4>{m.title}</h4>
+            <p>R${m.value}</p>
+            <Button buttonTitle="Adicionar ao carrinho" onclick = {() => {setTotal(total + m.value)
+            setCartProducts([...cartProducts, {title: m.title, value: m.value}])
+          }}/>
+        </ul>)}
+      </li>
     </div>
   )
 }

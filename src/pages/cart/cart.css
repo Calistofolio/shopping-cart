@@ -1,0 +1,10 @@
+.cartContainer{
+    margin: 20px;
+    padding: 20px;
+    font-size: 30px;
+}
+.cartButton{
+    display: flex;
+    gap: 20px;
+    float: inline-end;
+}

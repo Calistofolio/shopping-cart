@@ -11,8 +11,8 @@ function Header() {
   return (
     <div>
         <div className='header'>
-            <NavLink to="/">oii</NavLink>
-            <NavLink to="/cart">R$ {total}</NavLink>
+            <NavLink className="pageTitle" to="/"> LC Importados</NavLink>
+            <NavLink className="cart" to="/cart">R$ {total}</NavLink>
         </div>
         <Outlet/>
     </div>
