@@ -8,7 +8,6 @@ function Cart() {
 
   return (
     <div>
-        <Header></Header>
       funciona
     </div>
   )
