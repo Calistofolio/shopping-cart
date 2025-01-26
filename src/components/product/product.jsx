@@ -6,16 +6,16 @@ import './product.css'
 
 function Product() {
 
-  const { count } = useContext(ProductContext)
+  const { total, setTotal } = useContext(ProductContext)
 
   return (
     <div>
       {data.map((m) => 
-      <div>
-        <img src={m.image}/>
-        <h4>{count}</h4>
-        <p>{m.value}</p>
-        <Button/>
+      <div >
+        <img className="prod" src={m.image}/>
+        <h4>{m.title}</h4>
+        <p>R$ {m.value}</p>
+        <Button onclick = {() => setTotal(total + m.value)}/>
       </div>)}
     </div>
   )

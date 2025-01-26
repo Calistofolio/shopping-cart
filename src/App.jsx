@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import Product from './components/product/product'
-import { ProductContext } from './contexts/productsContext'
+import { Route, Routes } from 'react-router'
+import Home from './pages/home'
+import Cart from './pages/cart'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState("melt")
 
   return (
-    <div>
-      <ProductContext.Provider value={{count, setCount}}>
-      <Product/>
-      </ProductContext.Provider>
-    </div>
+    <Routes>
+      <Route index element={<Home />}/>
+      <Route path='cart' element={<Cart />}/>
+    </Routes>
   )
 }
 
