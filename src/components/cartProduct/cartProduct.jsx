@@ -8,13 +8,17 @@ function CartProducts() {
   const { cartProducts } = useContext(ProductContext)
   return (
     <div>   
+      <li>
         {cartProducts.map((c)  => 
-            <div>  
-                <Checkbox pId = {c.title}> 
+        <ul key={c.value} id={c.value}>
+            <div >  
+                <Checkbox price = {c.value}> 
                     <span> {c.title} </span>
                     <span className='productValue'>R$ {c.value} </span> 
                 </Checkbox>
-        </div>)}
+            </div>
+          </ul>)}
+        </li>
     </div>
   )
 }

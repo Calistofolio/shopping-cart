@@ -4,16 +4,14 @@ import { useContext } from 'react'
 import { ProductContext } from '../../contexts/productsContext'
 
 
-function CartButtons() {
-  const { setCartProducts, setTotal } = useContext(ProductContext)
+function CartButtons(props) {
+  const { setCartProducts, setTotal, total } = useContext(ProductContext)
   return (
-    <div class="cartButton">
+    <div className="cartButton">
         <Button onclick={() => { setTotal(0)
-            setCartProducts({})
+            setCartProducts([])
         }} buttonTitle="Cancelar" />
-        <Button onclick={() => { setTotal(0)
-            setCartProducts({})
-        }} buttonTitle="Finalizar"/>
+        <Button onclick={props.onclick} typeB="submit" buttonTitle="Finalizar"/>
     </div>
   )
 }
