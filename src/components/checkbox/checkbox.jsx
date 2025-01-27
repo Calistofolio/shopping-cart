@@ -1,4 +1,4 @@
-
+import "./checkbox.css"
 function Checkbox(props) {
   return (
     <div>

@@ -9,7 +9,7 @@ function CartProducts() {
   return (
     <div>   
         {cartProducts.map((c)  => 
-            <div >  
+            <div className='prod'>  
                 <Checkbox price = {c.value}> 
                     <span> {c.title} </span>
                     <span className='productValue'>R$ {c.value} </span> 
