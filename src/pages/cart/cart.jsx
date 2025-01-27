@@ -7,13 +7,14 @@ import { ProductContext } from "../../contexts/productsContext"
 
 
 function Cart() {
-  const { total, setTotal } = useContext(ProductContext)
+  const { total, setTotal, setCartProducts, cartProducts} = useContext(ProductContext)
   function handleClick(){
     const selected  = document.getElementsByClassName("check");
     let newTotal = 0;
     for (let i = 0; i < selected.length; i++) {
         if ((selected)[i].checked == true) {
             newTotal += parseInt(selected[i].value);
+            setCartProducts(cartProducts.filter(prod => prod.value != selected[i].value))
         }
     }
     setTotal(total - newTotal)
