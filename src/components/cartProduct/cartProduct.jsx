@@ -12,7 +12,7 @@ function CartProducts() {
             <div className='prod'>  
                 <Checkbox price = {c.value}> 
                     <span> {c.title} </span>
-                    <span className='productValue'>R$ {c.value} </span> 
+                    <span className='productValue'>R${c.value} </span> 
                 </Checkbox>
             </div>
           )}
